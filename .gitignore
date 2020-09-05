@@ -1,0 +1,22 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# mypy
+.mypy_cache/
+
+#Ide
+.vscode
+.idea
+
+Pipfile
+
+# Coverage files
+.coverage
+coverage.json
+htmlcov
+
+
