@@ -19,4 +19,4 @@ Pipfile
 coverage.json
 htmlcov
 
-
+__pycache__/

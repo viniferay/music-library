@@ -15,4 +15,5 @@ class SongSchema(Schema):
 
 
 class SongsSchema(Schema):
+    artist_name = fields.String(data_key='artistName')
     songs = fields.List(fields.Nested(SongSchema), many=True)

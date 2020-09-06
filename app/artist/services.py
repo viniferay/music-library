@@ -9,5 +9,6 @@ def get_songs_by_artist_id(artist_id: int) -> dict:
 
     genius_response = get_artist_songs(artist_id)
     response_json = genius_response.json()['response']
+    response_json['artist_name'] = artist_name
 
     return response_json
