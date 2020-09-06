@@ -1,9 +1,11 @@
 from flask import Flask
+from flask_redis import FlaskRedis
 
 from app.dynamoDB.client import DynamoDBClient
 from config import Config
 
 dynamoDB = DynamoDBClient()
+redis_client = FlaskRedis()
 
 
 def create_app(config_name='development'):
@@ -11,7 +13,8 @@ def create_app(config_name='development'):
     app.config.from_object(Config)
 
     dynamoDB.init_client(app)
-
+    redis_client.init_app(app)
+    
     from app.genius import bp as genius_client_bp
     app.register_blueprint(genius_client_bp)
 
